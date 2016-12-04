@@ -1,0 +1,8 @@
+
+/.idea/
+/README.md
+/LICENSE
+/.swagger-codegen-ignore
+!/.swagger-codegen-ignore
+!/LICENSE
+!/README.md
