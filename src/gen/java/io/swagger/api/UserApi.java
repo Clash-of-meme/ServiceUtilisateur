@@ -26,7 +26,7 @@ import javax.ws.rs.*;
 @Consumes({ "application/json", "application/xml" })
 @Produces({ "application/json", "application/xml" })
 @io.swagger.annotations.Api(description = "the user API")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-11-27T09:59:00.389Z")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-12-05T21:52:39.785Z")
 public class UserApi  {
    private final UserApiService delegate = UserApiServiceFactory.getUserApi();
 
@@ -50,7 +50,7 @@ public class UserApi  {
         return delegate.userGet(securityContext);
     }
     @GET
-    @Path("/{id}")
+    @Path("/{login}")
     @Consumes({ "application/json", "application/xml" })
     @Produces({ "application/json", "application/xml" })
     @io.swagger.annotations.ApiOperation(value = "Recupérer les informations d'un utilisateur", notes = "", response = User.class, authorizations = {
@@ -66,9 +66,9 @@ public class UserApi  {
         @io.swagger.annotations.ApiResponse(code = 403, message = "Vous n'êtes pas autorisé à utiliser cette ressource.", response = User.class),
         
         @io.swagger.annotations.ApiResponse(code = 503, message = "Erreur de connexion à la base de donnée", response = User.class) })
-    public Response userIdGet(@ApiParam(value = "ID d'un utilisateur",required=true) @PathParam("id") Integer id
+    public Response userLoginGet(@ApiParam(value = "ID d'un utilisateur",required=true) @PathParam("login") String login
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
-        return delegate.userIdGet(id,securityContext);
+        return delegate.userLoginGet(login,securityContext);
     }
 }

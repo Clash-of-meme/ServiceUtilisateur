@@ -34,13 +34,10 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * User
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-11-27T09:59:00.389Z")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-12-05T21:52:39.785Z")
 public class User   {
   @JsonProperty("login")
   private String login = null;
-
-  @JsonProperty("token")
-  private String token = null;
 
   @JsonProperty("email")
   private String email = null;
@@ -61,24 +58,6 @@ public class User   {
 
   public void setLogin(String login) {
     this.login = login;
-  }
-
-  public User token(String token) {
-    this.token = token;
-    return this;
-  }
-
-   /**
-   * Clé de l'utilisateur.
-   * @return token
-  **/
-  @ApiModelProperty(value = "Clé de l'utilisateur.")
-  public String getToken() {
-    return token;
-  }
-
-  public void setToken(String token) {
-    this.token = token;
   }
 
   public User email(String email) {
@@ -110,13 +89,12 @@ public class User   {
     }
     User user = (User) o;
     return Objects.equals(this.login, user.login) &&
-        Objects.equals(this.token, user.token) &&
         Objects.equals(this.email, user.email);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(login, token, email);
+    return Objects.hash(login, email);
   }
 
 
@@ -126,7 +104,6 @@ public class User   {
     sb.append("class User {\n");
     
     sb.append("    login: ").append(toIndentedString(login)).append("\n");
-    sb.append("    token: ").append(toIndentedString(token)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("}");
     return sb.toString();
