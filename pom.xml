@@ -2,8 +2,8 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.swagger</groupId>
   <artifactId>ServiceUtilisateur</artifactId>
-  <packaging>jar</packaging>
-  <name>Service Utilisateur</name>
+  <packaging>war</packaging>
+  <name>ServiceUtilisateur</name>
   <version>1.0.0</version>
   <build>
     <sourceDirectory>src/main/java</sourceDirectory>
