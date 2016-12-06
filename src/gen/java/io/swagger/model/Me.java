@@ -32,29 +32,71 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * Token
+ * Me
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-11-27T09:59:00.389Z")
-public class Token   {
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-12-05T21:52:39.785Z")
+public class Me   {
+  @JsonProperty("login")
+  private String login = null;
+
   @JsonProperty("token")
   private String token = null;
 
-  public Token token(String token) {
+  @JsonProperty("email")
+  private String email = null;
+
+  public Me login(String login) {
+    this.login = login;
+    return this;
+  }
+
+   /**
+   * Nom de l'utilisateur
+   * @return login
+  **/
+  @ApiModelProperty(value = "Nom de l'utilisateur")
+  public String getLogin() {
+    return login;
+  }
+
+  public void setLogin(String login) {
+    this.login = login;
+  }
+
+  public Me token(String token) {
     this.token = token;
     return this;
   }
 
    /**
-   * token de l'utilisateur.
+   * Clé de l'utilisateur.
    * @return token
   **/
-  @ApiModelProperty(value = "token de l'utilisateur.")
+  @ApiModelProperty(value = "Clé de l'utilisateur.")
   public String getToken() {
     return token;
   }
 
   public void setToken(String token) {
     this.token = token;
+  }
+
+  public Me email(String email) {
+    this.email = email;
+    return this;
+  }
+
+   /**
+   * Email de l'utilisateur
+   * @return email
+  **/
+  @ApiModelProperty(value = "Email de l'utilisateur")
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
   }
 
 
@@ -66,22 +108,26 @@ public class Token   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Token token = (Token) o;
-    return Objects.equals(this.token, token.token);
+    Me me = (Me) o;
+    return Objects.equals(this.login, me.login) &&
+        Objects.equals(this.token, me.token) &&
+        Objects.equals(this.email, me.email);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(token);
+    return Objects.hash(login, token, email);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Token {\n");
+    sb.append("class Me {\n");
     
+    sb.append("    login: ").append(toIndentedString(login)).append("\n");
     sb.append("    token: ").append(toIndentedString(token)).append("\n");
+    sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("}");
     return sb.toString();
   }

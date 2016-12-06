@@ -27,7 +27,7 @@ import javax.ws.rs.*;
 @Consumes({ "application/json", "application/xml" })
 @Produces({ "application/json", "application/xml" })
 @io.swagger.annotations.Api(description = "the signin API")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-11-27T09:59:00.389Z")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-12-05T21:52:39.785Z")
 public class SigninApi  {
    private final SigninApiService delegate = SigninApiServiceFactory.getSigninApi();
 

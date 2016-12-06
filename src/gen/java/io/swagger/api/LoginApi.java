@@ -8,7 +8,6 @@ import io.swagger.annotations.ApiParam;
 import io.swagger.jaxrs.*;
 
 import io.swagger.model.User;
-import io.swagger.model.Identifiant;
 
 import java.util.List;
 import io.swagger.api.NotFoundException;
@@ -27,7 +26,7 @@ import javax.ws.rs.*;
 @Consumes({ "application/json", "application/xml" })
 @Produces({ "application/json", "application/xml" })
 @io.swagger.annotations.Api(description = "the login API")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-11-27T09:59:00.389Z")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-12-05T21:52:39.785Z")
 public class LoginApi  {
    private final LoginApiService delegate = LoginApiServiceFactory.getLoginApi();
 
@@ -48,9 +47,10 @@ public class LoginApi  {
         @io.swagger.annotations.ApiResponse(code = 403, message = "Vous n'êtes pas autorisé à utiliser cette ressource.", response = User.class),
         
         @io.swagger.annotations.ApiResponse(code = 503, message = "Erreur de connexion à la base de donnée.", response = User.class) })
-    public Response loginGet(@ApiParam(value = "Identifiant (Login / password) de l'utilisateur." ,required=true) Identifiant utilisateur
+    public Response loginGet(@ApiParam(value = "Identifiant de l'utilisateur.",required=true) @QueryParam("login") String login
+,@ApiParam(value = "Password de l'utilisateur.",required=true) @QueryParam("password") String password
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
-        return delegate.loginGet(utilisateur,securityContext);
+        return delegate.loginGet(login,password,securityContext);
     }
 }
