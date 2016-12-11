@@ -34,19 +34,19 @@ public class LoginApi  {
     
     @Consumes({ "application/json", "application/xml" })
     @Produces({ "application/json", "application/xml" })
-    @io.swagger.annotations.ApiOperation(value = "Connexion", notes = "Endpoint de connexion. ", response = User.class, authorizations = {
+    @io.swagger.annotations.ApiOperation(value = "Connexion", notes = "Endpoint de connexion. ", response = Me.class, authorizations = {
         @io.swagger.annotations.Authorization(value = "API key")
     }, tags={ "login", })
     @io.swagger.annotations.ApiResponses(value = { 
-        @io.swagger.annotations.ApiResponse(code = 200, message = "Le token de l'utilisateur", response = User.class),
+        @io.swagger.annotations.ApiResponse(code = 200, message = "Le token de l'utilisateur", response = Me.class),
         
-        @io.swagger.annotations.ApiResponse(code = 400, message = "Bad request. No user.", response = User.class),
+        @io.swagger.annotations.ApiResponse(code = 400, message = "Bad request. No user.", response = Me.class),
         
-        @io.swagger.annotations.ApiResponse(code = 401, message = "Vous devez être identifié.", response = User.class),
+        @io.swagger.annotations.ApiResponse(code = 401, message = "Vous devez être identifié.", response = Me.class),
         
-        @io.swagger.annotations.ApiResponse(code = 403, message = "Vous n'êtes pas autorisé à utiliser cette ressource.", response = User.class),
+        @io.swagger.annotations.ApiResponse(code = 403, message = "Vous n'êtes pas autorisé à utiliser cette ressource.", response = Me.class),
         
-        @io.swagger.annotations.ApiResponse(code = 503, message = "Erreur de connexion à la base de donnée.", response = User.class) })
+        @io.swagger.annotations.ApiResponse(code = 503, message = "Erreur de connexion à la base de donnée.", response = Me.class) })
     public Response loginGet(@ApiParam(value = "Identifiant de l'utilisateur.",required=true) @QueryParam("login") String login
 ,@ApiParam(value = "Password de l'utilisateur.",required=true) @QueryParam("password") String password
 ,@Context SecurityContext securityContext)
