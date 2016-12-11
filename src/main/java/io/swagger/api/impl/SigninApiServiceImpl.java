@@ -74,6 +74,6 @@ public class SigninApiServiceImpl extends SigninApiService {
         user.setEmail(inscription.getEmail());
         user.setToken(token);
 
-        return Response.status(Constants.OK).entity(user).build();
+        return Response.status(Constants.CREATED).entity(user).build();
     }
 }
