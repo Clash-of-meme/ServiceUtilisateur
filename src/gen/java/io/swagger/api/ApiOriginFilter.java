@@ -26,6 +26,10 @@ public class ApiOriginFilter implements javax.servlet.Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
 
+        res.addHeader("Access-Control-Allow-Origin", "*");
+        res.addHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT");
+        res.addHeader("Access-Control-Allow-Headers", "Content-Type");
+
         String authHeader = req.getHeader("Authorization");
         if (authHeader != null) {
             StringTokenizer st = new StringTokenizer(authHeader);
